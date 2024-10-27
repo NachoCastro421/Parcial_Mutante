@@ -14,10 +14,8 @@ import java.util.Arrays;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Dna {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Dna extends Base{
+
 
     @Column(name = "ADN",columnDefinition = "text", unique = true)
     private String dna;

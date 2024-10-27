@@ -87,7 +87,7 @@ public class DnaService {
                 .mapToInt(sequence -> useHint ? findHintAndProcess(sequence, 1) : checkSequence(sequence))
                 .sum();
 
-        return leftToRightDiagonals + leftToRightDiagonals;
+        return leftToRightDiagonals + rightToLeftDiagonals;
     }
     //Encuentra pistas en la secunecia y las procesa
     private int findHintAndProcess(String sequence, int step) {
