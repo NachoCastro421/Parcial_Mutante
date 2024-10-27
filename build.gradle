@@ -64,3 +64,9 @@ tasks.named('asciidoctor') {
 	inputs.dir snippetsDir
 	dependsOn test
 }
+tasks.jar {
+	enabled = true
+}
+bootJar{
+	enabled = true
+}
