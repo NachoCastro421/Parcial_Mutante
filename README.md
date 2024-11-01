@@ -1,21 +1,21 @@
-#Mutant Detector API
+## Mutant Detector API
 Este proyecto es una API RESTful que permite detectar si un humano es mutante basándose en su secuencia de ADN. La API también proporciona estadísticas sobre el número de verificaciones de ADN realizadas y el porcentaje de mutantes detectados.
 
-##Tecnologías Utilizadas
+## Tecnologías Utilizadas
 Java
 Spring Boot para la construcción de la API
 H2 Database como base de datos en memoria para almacenar las verificaciones de ADN
 JMeter para pruebas de carga
-##Estructura del Proyecto
+## Estructura del Proyecto
 El proyecto se organiza en tres capas principales: Controladores, Servicios y Repositorios.
 
-##Controladores
-DnaController: Controlador principal para manejar solicitudes relacionadas con la verificación de ADN.
+## Controladores
+**DnaController:** Controlador principal para manejar solicitudes relacionadas con la verificación de ADN.
 StatsController: Controlador para obtener estadísticas de las verificaciones de ADN realizadas.
-##Servicios
+## Servicios
 DnaService: Servicio que contiene la lógica para analizar una secuencia de ADN y determinar si un humano es mutante.
 StatsService: Servicio que calcula las estadísticas basadas en el número de mutantes y humanos verificados.
-##Entidades
+## Entidades
 Base: Entidad base que permite agregar nuevas entidades en el futuro de manera más sencilla.
 Dna: Entidad que representa una secuencia de ADN .
 ##Excepciones
