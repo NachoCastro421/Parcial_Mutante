@@ -5,7 +5,6 @@ Este proyecto es una API RESTful que permite detectar si un humano es mutante ba
 Java
 Spring Boot para la construcción de la API
 H2 Database como base de datos en memoria para almacenar las verificaciones de ADN
-JUnit para pruebas automáticas
 JMeter para pruebas de carga
 ##Estructura del Proyecto
 El proyecto se organiza en tres capas principales: Controladores, Servicios y Repositorios.
@@ -17,15 +16,16 @@ StatsController: Controlador para obtener estadísticas de las verificaciones de
 DnaService: Servicio que contiene la lógica para analizar una secuencia de ADN y determinar si un humano es mutante.
 StatsService: Servicio que calcula las estadísticas basadas en el número de mutantes y humanos verificados.
 ##Entidades
-BaseEntity: Entidad base que permite agregar nuevas entidades en el futuro de manera más sencilla.
-Dna: Entidad que representa una secuencia de ADN verificada, incluyendo si corresponde a un mutante o no.
+Base: Entidad base que permite agregar nuevas entidades en el futuro de manera más sencilla.
+Dna: Entidad que representa una secuencia de ADN .
 ##Excepciones
 DnaValidationExceptionHandler: Manejador de excepciones personalizado para capturar errores en el formato del ADN y devolver mensajes de error apropiados al cliente.
+DnaException: devuelve mensajes de error al cliente
 ##Repositorios
 DnaRepository: Repositorio para la persistencia de datos de ADN verificados en la base de datos H2.
 ##DTOs (Data Transfer Objects)
-DnaResponseDto: DTO que representa la respuesta cuando se verifica una secuencia de ADN.
-StatsResponseDto: DTO que representa la respuesta para las estadísticas de ADN.
+DnaResponse: DTO que representa la respuesta cuando se verifica una secuencia de ADN.
+StatsResponse: DTO que representa la respuesta para las estadísticas de ADN.
 ##Endpoints
 POST /mutant: Verifica si una secuencia de ADN corresponde a un mutante.
 
@@ -71,9 +71,10 @@ La cobertura de código es mayor al 80%, cumpliendo con el requisito de asegurar
 Clonar el repositorio desde GitHub.
 Importar el proyecto en tu IDE de preferencia (Eclipse, IntelliJ).
 Ejecutar el proyecto utilizando la configuración de Spring Boot.
-La API estará disponible en http://localhost:8080.
+La API estará disponible en https://parcial-mutante-p1ci.onrender.com.
 ##Entregables
 Código Fuente: Disponible en el repositorio de GitHub.
 Instrucciones de Ejecución: Este README contiene los pasos necesarios para ejecutar el programa.
-URL de la API: http://localhost:8080 (o la URL del servidor en caso de despliegue).
+URL de la API: https://parcial-mutante-p1ci.onrender.com
 Documentación: Incluye este README para entender la estructura y el uso de la API.
+Las cosas pedidades en el nivel 3 se encuentran en el archivo PDF  Nivel3.pdf
