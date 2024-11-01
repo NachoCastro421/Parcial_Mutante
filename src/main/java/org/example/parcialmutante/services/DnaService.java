@@ -29,8 +29,6 @@ public class DnaService {
         int sequenceCount = 0;
         int size = dna.length;
 
-
-
         // Verificar de manera horizontal, vertical y diagonal
         sequenceCount += checkAllHorizontal(dna,size,true);
         sequenceCount += checkAllVertical(dna,size,true);
