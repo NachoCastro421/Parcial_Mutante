@@ -70,10 +70,9 @@ Content-Type: application/json
 
 
 ## Pruebas
-1. **Pruebas Unitarias:** Se implementaron pruebas para verificar el correcto funcionamiento de la lógica de detección de mutantes y del cálculo de estadísticas.
+1. **Pruebas Unitarias:** Se implementaron pruebas con Postman para verificar el correcto funcionamiento de la lógica de detección de mutantes y del cálculo de estadísticas.
 2. **Pruebas de Carga:** Se utilizó JMeter para verificar que la API soporte una alta cantidad de solicitudes por segundo, asegurando su estabilidad bajo carga.
-## Cobertura de Código
-La cobertura de código es mayor al 80%, cumpliendo con el requisito de asegurar que la mayoría de la lógica del sistema esté probada.
+
 
 
 ## Instrucciones de Instalación
