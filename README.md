@@ -50,6 +50,7 @@ Content-Type: application/json
 }
   - **Respuesta (Mutante)**: 200 OK
   - **Respuesta (No Mutante)**: 403 Forbidden
+    
      Obtener Estadísticas
 
 **GET /stats**
