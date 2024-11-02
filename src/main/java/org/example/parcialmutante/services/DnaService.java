@@ -59,33 +59,34 @@ public class DnaService {
                 .mapToInt(sequence -> useHint ? findHintAndProcess(sequence, 1) : checkSequence(sequence))
                 .sum();
     }
-    //Verifica todas las diagonales del ADN
-    private int checkAllDiagonals(String[] dna, int size,boolean useHint) {
+    private int checkAllDiagonals(String[] dna, int size, boolean useHint) {
+        int totalDiagonals = 0;
+
+        // Procesar diagonales de izquierda a derecha
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j <= size - i; j++) {
+                String diagonal = getDiagonal(dna, size, i, j);
+                totalDiagonals += useHint ? findHintAndProcess(diagonal, 1) : checkSequence(diagonal);
+            }
+        }
+
+        // Procesar diagonales de derecha a izquierda
+        for (int i = 1; i < size; i++) {
+            for (int j = 0; j < i; j++) {
+                String diagonal = getDiagonal(dna, size, i, j);
+                totalDiagonals += useHint ? findHintAndProcess(diagonal, 1) : checkSequence(diagonal);
+            }
+        }
+
+        return totalDiagonals;
+    }
+
+    private String getDiagonal(String[] dna, int size, int rowStart, int colStart) {
         StringBuilder diagonal = new StringBuilder(size);
-        int leftToRightDiagonals = IntStream.range(0, size)
-                .mapToObj(i -> {
-                    diagonal.setLength(0);
-                    IntStream.range(0, i + 1)
-                            .filter(j -> i - j < size)
-                            .forEach(j -> diagonal.append(dna[i - j].charAt(j)));
-                    return diagonal.toString();
-                })
-                .mapToInt(sequence -> useHint ? findHintAndProcess(sequence, 1) : checkSequence(sequence))
-                .sum();
-
-        diagonal.setLength(0);
-        int rightToLeftDiagonals = IntStream.range(0, size)
-                .mapToObj(i -> {
-                    diagonal.setLength(0);
-                    IntStream.range(0, i + 1)
-                            .filter(j -> i - j < size)
-                            .forEach(j -> diagonal.append(dna[i - j].charAt(size - 1 - j)));
-                    return diagonal.toString();
-                })
-                .mapToInt(sequence -> useHint ? findHintAndProcess(sequence, 1) : checkSequence(sequence))
-                .sum();
-
-        return leftToRightDiagonals + rightToLeftDiagonals;
+        for (int i = 0; i < size && rowStart + i < size && colStart + i < size; i++) {
+            diagonal.append(dna[rowStart + i].charAt(colStart + i));
+        }
+        return diagonal.toString();
     }
     //Encuentra pistas en la secunecia y las procesa
     private int findHintAndProcess(String sequence, int step) {
