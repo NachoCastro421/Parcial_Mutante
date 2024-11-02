@@ -43,14 +43,16 @@ El proyecto se organiza en tres capas principales: Controladores, Servicios y Re
 
 POST /mutant
 
+```
 Content-Type: application/json
+
 
 {
   "dna": ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"]
 }
   - **Respuesta (Mutante)**: 200 OK
   - **Respuesta (No Mutante)**: 403 Forbidden
-    
+ ```
      Obtener Estadísticas
 
 **GET /stats**
