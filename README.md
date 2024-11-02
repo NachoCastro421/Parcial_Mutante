@@ -40,10 +40,10 @@ El proyecto se organiza en tres capas principales: Controladores, Servicios y Re
   - Respuesta: JSON con el número de mutantes, el número de humanos, y el ratio de mutantes/humanos.
 ## Ejemplo de Uso
 ### Verificar ADN de un mutante
-
+```
 POST /mutant
 
-```
+
 Content-Type: application/json
 
 
@@ -54,18 +54,18 @@ Content-Type: application/json
   - **Respuesta (No Mutante)**: 403 Forbidden
  ```
      Obtener Estadísticas
-
+```
 **GET /stats**
 - Respuesta:
   
+  
+ 
  {
   "count_mutant_dna": 40,
-  
   "count_human_dna": 100,
-  
   "ratio": 0.4
- }
-
+ } 
+```
 
 
 
